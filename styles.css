@@ -36,6 +36,18 @@
   top: 0;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.section--dark a:focus-visible,
+.section--dark button:focus-visible {
+  outline-color: var(--white);
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -102,6 +114,16 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  min-height: 44px;
+  min-width: 44px;
+  color: var(--black);
+  text-decoration: none;
 }
 
 .nav__logo svg {
@@ -236,6 +258,11 @@ body {
 .btn--large {
   padding: 16px 36px;
   font-size: 15px;
+}
+
+.btn--small {
+  padding: 8px 20px;
+  font-size: 13px;
 }
 
 .btn--white {
@@ -671,6 +698,16 @@ body {
   justify-content: space-between;
 }
 
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px;
+  min-height: 44px;
+  min-width: 44px;
+  color: var(--black);
+  text-decoration: none;
+}
+
 .footer__logo svg {
   height: 22px;
   width: auto;
@@ -873,5 +910,73 @@ body {
 
   .features__title {
     font-size: 24px;
+  }
+}
+
+/* ---- Dark mode ---- */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --black: #EDEDED;
+    --black-light: #DADADA;
+    --grey-900: #C0C0C0;
+    --grey-700: #9B9B9B;
+    --grey-500: #6B6B6B;
+    --grey-300: #3D3D3D;
+    --grey-200: #2D2D2D;
+    --grey-100: #242422;
+    --white: #1A1A1A;
+    --warm: #1E1D1B;
+  }
+
+  .nav {
+    background: rgba(26, 26, 26, 0.95);
+  }
+
+  .section--dark {
+    background: #111;
+    color: #EDEDED;
+  }
+
+  .section--dark .section-header__tag {
+    color: #6B6B6B;
+  }
+
+  .section--dark .section-header__text {
+    color: #9B9B9B;
+  }
+
+  .section--dark .stat__label {
+    color: #9B9B9B;
+  }
+
+  .section--dark .waitlist__input,
+  .section--dark .waitlist__select {
+    background: #242422;
+    color: #EDEDED;
+    border-color: #3D3D3D;
+  }
+
+  .section--dark .waitlist__input:focus,
+  .section--dark .waitlist__select:focus {
+    border-color: #EDEDED;
+  }
+
+  .section--dark .btn--white {
+    background: #EDEDED;
+    color: #1A1A1A;
+  }
+
+  .section--dark .btn--white:hover {
+    background: #DADADA;
+  }
+
+  .section--dark .waitlist__success {
+    background: #242422;
+    color: #EDEDED;
+  }
+
+  .features__list li::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23EDEDED' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   }
 }
