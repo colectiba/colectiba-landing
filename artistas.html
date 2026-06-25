@@ -91,12 +91,12 @@
         <p class="waitlist__subtitle">Estamos construyendo Colectiba. Los primeros 50 artistas van a tener acceso prioritario y badge de fundador.</p>
         <form class="waitlist__form" id="waitlistForm">
           <div class="waitlist__row">
-            <input type="text" class="waitlist__input" placeholder="Tu nombre" required>
-            <input type="email" class="waitlist__input" placeholder="Tu email" required>
+            <input type="text" name="nombre" class="waitlist__input" placeholder="Tu nombre" required>
+            <input type="email" name="email" class="waitlist__input" placeholder="Tu email" required>
           </div>
           <div class="waitlist__row">
-            <input type="text" class="waitlist__input" placeholder="Tu disciplina (ej: pintura, escultura, fotografía)">
-            <input type="text" class="waitlist__input" placeholder="Ciudad (opcional)">
+            <input type="text" name="disciplina" class="waitlist__input" placeholder="Tu disciplina (ej: pintura, escultura, fotografía)">
+            <input type="text" name="ciudad" class="waitlist__input" placeholder="Ciudad (opcional)">
           </div>
           <input type="hidden" name="rol" value="artista">
           <button type="submit" class="btn btn--white btn--large waitlist__submit">Quiero mi espacio</button>

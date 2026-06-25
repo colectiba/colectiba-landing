@@ -206,18 +206,18 @@
         <p class="waitlist__subtitle">Estamos construyendo Colectiba. Dejá tus datos y sé de los primeros en entrar.</p>
         <form class="waitlist__form" id="waitlistForm">
           <div class="waitlist__row">
-            <input type="text" class="waitlist__input" placeholder="Tu nombre" required>
-            <input type="email" class="waitlist__input" placeholder="Tu email" required>
+            <input type="text" name="nombre" class="waitlist__input" placeholder="Tu nombre" required>
+            <input type="email" name="email" class="waitlist__input" placeholder="Tu email" required>
           </div>
           <div class="waitlist__row">
-            <select class="waitlist__select" required>
+            <select name="rol" class="waitlist__select" required>
               <option value="" disabled selected>¿Cuál es tu rol?</option>
               <option value="artista">Artista</option>
               <option value="curador">Curador/a</option>
               <option value="galeria">Galería</option>
               <option value="coleccionista">Coleccionista / Amante del arte</option>
             </select>
-            <input type="text" class="waitlist__input" placeholder="Ciudad (opcional)">
+            <input type="text" name="ciudad" class="waitlist__input" placeholder="Ciudad (opcional)">
           </div>
           <button type="submit" class="btn btn--white btn--large waitlist__submit">Quiero entrar</button>
         </form>
