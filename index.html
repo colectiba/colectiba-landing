@@ -56,7 +56,7 @@
         <li><a href="curadores.html">Curadores</a></li>
         <li><a href="galerias.html">Galerías</a></li>
         <li><a href="como-funciona.html">Cómo funciona</a></li>
-        <li><a href="https://app.colectiba.com/registro" class="btn btn--primary btn--small">Crear cuenta</a></li>
+        <li><a href="#waitlist" class="btn btn--primary btn--small">Sumate</a></li>
       </ul>
       <button class="nav__mobile-toggle" aria-label="Menú" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'); document.querySelector('.nav__links').classList.toggle('open')">
         <span></span><span></span><span></span>
@@ -69,11 +69,11 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <span class="hero__tag">Ya podés registrarte</span>
+      <span class="hero__tag">Lista de espera abierta</span>
       <h1 class="hero__title font-display">Conectamos tu arte con el mundo</h1>
       <p class="hero__subtitle">La plataforma que une artistas, curadores y galerías de Argentina. Sin comisiones. Sin intermediarios. Conexión directa.</p>
       <div class="hero__cta">
-        <a href="https://app.colectiba.com/registro" class="btn btn--primary btn--large">Crear cuenta gratis</a>
+        <a href="#waitlist" class="btn btn--primary btn--large">Quiero entrar</a>
         <a href="como-funciona.html" class="btn btn--secondary btn--large">Cómo funciona</a>
       </div>
     </div>
@@ -166,11 +166,28 @@
   <section class="section section--dark" id="waitlist">
     <div class="container">
       <div class="waitlist">
-        <h2 class="waitlist__title font-display">Colectiba ya está disponible</h2>
-        <p class="waitlist__subtitle">Creá tu cuenta gratis y empezá a mostrar tu obra, descubrir artistas o conectar con la comunidad.</p>
-        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
-          <a href="https://app.colectiba.com/registro" class="btn btn--white btn--large">Crear cuenta gratis</a>
-          <a href="https://app.colectiba.com/login" class="btn btn--secondary btn--large" style="border-color:rgba(255,255,255,.3);color:#fff;">Ya tengo cuenta</a>
+        <h2 class="waitlist__title font-display">Sumate a la lista de espera</h2>
+        <p class="waitlist__subtitle">Estamos construyendo Colectiba. Dejá tus datos y sé de los primeros en entrar.</p>
+        <form class="waitlist__form" id="waitlistForm">
+          <div class="waitlist__row">
+            <input type="text" name="nombre" class="waitlist__input" placeholder="Tu nombre" aria-label="Tu nombre" required>
+            <input type="email" name="email" class="waitlist__input" placeholder="Tu email" aria-label="Tu email" required>
+          </div>
+          <div class="waitlist__row">
+            <select name="rol" class="waitlist__select" aria-label="Tu rol" required>
+              <option value="" disabled selected>¿Cuál es tu rol?</option>
+              <option value="artista">Artista</option>
+              <option value="curador">Curador/a</option>
+              <option value="galeria">Galería</option>
+              <option value="coleccionista">Coleccionista / Amante del arte</option>
+            </select>
+            <input type="text" name="ciudad" class="waitlist__input" placeholder="Ciudad (opcional)" aria-label="Ciudad">
+          </div>
+          <button type="submit" class="btn btn--white btn--large waitlist__submit">Quiero entrar</button>
+        </form>
+        <div class="waitlist__success" id="waitlistSuccess">
+          <h3>Ya estás en la lista</h3>
+          <p>Te vamos a escribir cuando estemos listos. Gracias por creer en el arte argentino.</p>
         </div>
       </div>
     </div>
