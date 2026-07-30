@@ -7,12 +7,12 @@
     },
     {
       "source": "/artistas",
-      "destination": "/#artistas",
+      "destination": "/novedades.html#artistas",
       "permanent": true
     },
     {
       "source": "/artistas.html",
-      "destination": "/#artistas",
+      "destination": "/novedades.html#artistas",
       "permanent": true
     },
     {
@@ -27,22 +27,22 @@
     },
     {
       "source": "/curadores",
-      "destination": "/#curadores",
+      "destination": "/novedades.html#curadores",
       "permanent": true
     },
     {
       "source": "/curadores.html",
-      "destination": "/#curadores",
+      "destination": "/novedades.html#curadores",
       "permanent": true
     },
     {
       "source": "/galerias",
-      "destination": "/#galerias",
+      "destination": "/novedades.html#galerias",
       "permanent": true
     },
     {
       "source": "/galerias.html",
-      "destination": "/#galerias",
+      "destination": "/novedades.html#galerias",
       "permanent": true
     }
   ]
