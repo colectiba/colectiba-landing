@@ -1,0 +1,49 @@
+{
+  "redirects": [
+    {
+      "source": "/artista/:slug",
+      "destination": "https://app.colectiba.com/artista/:slug",
+      "permanent": false
+    },
+    {
+      "source": "/artistas",
+      "destination": "/#artistas",
+      "permanent": true
+    },
+    {
+      "source": "/artistas.html",
+      "destination": "/#artistas",
+      "permanent": true
+    },
+    {
+      "source": "/como-funciona",
+      "destination": "/#como-funciona",
+      "permanent": true
+    },
+    {
+      "source": "/como-funciona.html",
+      "destination": "/#como-funciona",
+      "permanent": true
+    },
+    {
+      "source": "/curadores",
+      "destination": "/#curadores",
+      "permanent": true
+    },
+    {
+      "source": "/curadores.html",
+      "destination": "/#curadores",
+      "permanent": true
+    },
+    {
+      "source": "/galerias",
+      "destination": "/#galerias",
+      "permanent": true
+    },
+    {
+      "source": "/galerias.html",
+      "destination": "/#galerias",
+      "permanent": true
+    }
+  ]
+}

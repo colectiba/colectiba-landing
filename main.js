@@ -76,4 +76,47 @@ document.addEventListener('DOMContentLoaded', function () {
       nav.style.boxShadow = 'none';
     }
   });
+
+  // Lógica de Pestañas (Tab Switcher) para "Cómo funciona"
+  var tabButtons = document.querySelectorAll('.tab-btn');
+  var tabPanels = document.querySelectorAll('.tab-panel');
+
+  tabButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabButtons.forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      tabPanels.forEach(function (p) {
+        p.classList.remove('active');
+        p.style.display = 'none';
+      });
+
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      var targetId = btn.getAttribute('aria-controls');
+      var targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+        targetPanel.style.display = 'block';
+      }
+    });
+  });
+
+  // Cerrar menú móvil al hacer click en enlaces de la sección
+  var navLinksContainer = document.querySelector('.nav__links');
+  var mobileToggle = document.querySelector('.nav__mobile-toggle');
+  var menuLinks = document.querySelectorAll('.nav__links a');
+
+  menuLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (navLinksContainer && navLinksContainer.classList.contains('open')) {
+        navLinksContainer.classList.remove('open');
+      }
+      if (mobileToggle && mobileToggle.getAttribute('aria-expanded') === 'true') {
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
 });

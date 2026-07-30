@@ -127,7 +127,7 @@ body {
 }
 
 .nav__logo svg {
-  height: 28px;
+  height: 34px;
   width: auto;
 }
 
@@ -151,6 +151,15 @@ body {
 }
 
 .nav__links a.active {
+  color: var(--black);
+}
+
+/* Los botones dentro del nav mantienen su propio color (evita gris ilegible) */
+.nav__links a.btn--primary {
+  color: var(--white);
+}
+
+.nav__links a.btn--secondary {
   color: var(--black);
 }
 
@@ -464,6 +473,54 @@ body {
   line-height: 1.6;
 }
 
+/* Variante GHOST (Si sos curador): números grandes tipo editorial, sin círculo */
+.steps--ghost .step {
+  padding-top: 8px;
+  border-top: 2px solid var(--black);
+}
+
+.steps--ghost .step__number {
+  width: auto;
+  height: auto;
+  background: none;
+  color: var(--grey-300);
+  border-radius: 0;
+  font-size: 52px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+  justify-content: flex-start;
+}
+
+.steps--ghost .step {
+  text-align: left;
+}
+
+/* Variante CARDS (Si sos galería): tarjetas con badge, alineado a la izquierda */
+.steps--cards {
+  gap: 24px;
+}
+
+.steps--cards .step {
+  text-align: left;
+  border: 1px solid var(--grey-200);
+  border-radius: 12px;
+  padding: 32px 28px;
+  transition: border-color 0.2s;
+}
+
+.steps--cards .step:hover {
+  border-color: var(--grey-300);
+}
+
+.steps--cards .step__number {
+  width: 36px;
+  height: 36px;
+  font-size: 15px;
+  margin: 0 0 20px;
+}
+
 /* ---- Ecosistema (visual) ---- */
 
 .ecosystem {
@@ -709,7 +766,7 @@ body {
 }
 
 .footer__logo svg {
-  height: 22px;
+  height: 30px;
   width: auto;
 }
 
@@ -979,4 +1036,100 @@ body {
   .features__list li::before {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23EDEDED' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   }
+}
+
+.features__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* ---- Consolidacion One-Page ---- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 80px; /* offset for fixed header */
+}
+
+.anchor-offset {
+  display: block;
+  height: 80px;
+  margin-top: -80px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Tabs UI */
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--grey-200);
+  padding-bottom: 16px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--grey-500);
+  padding: 12px 24px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.tab-btn:hover {
+  color: var(--black);
+}
+
+.tab-btn.active {
+  color: var(--black);
+  font-weight: 600;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--black);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.features__visual--founder {
+  transition: transform 0.3s ease;
+}
+
+.features__visual--founder:hover {
+  transform: scale(1.01);
 }
