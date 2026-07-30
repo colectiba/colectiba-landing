@@ -127,7 +127,7 @@ body {
 }
 
 .nav__logo svg {
-  height: 34px;
+  height: 27px;
   width: auto;
 }
 
@@ -185,8 +185,12 @@ body {
 /* ---- Hero ---- */
 
 .hero {
-  padding: 160px 0 100px;
+  padding: 180px 0 120px;
   text-align: center;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.95)), url('hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero__tag {
@@ -954,6 +958,10 @@ body {
     background: rgba(26, 26, 26, 0.95);
   }
 
+  .hero {
+    background-image: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.95)), url('hero-bg.png');
+  }
+
   .section--dark {
     background: #111;
     color: #EDEDED;
@@ -1049,6 +1057,9 @@ section[id] {
   cursor: pointer;
   position: relative;
   transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .tab-btn:hover {
