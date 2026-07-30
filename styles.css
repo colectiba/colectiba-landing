@@ -442,27 +442,39 @@ body {
 .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
-  text-align: center;
+  gap: 24px;
   margin-top: 60px;
+}
+
+.step {
+  background: var(--white);
+  border: 1px solid var(--grey-200);
+  border-radius: 12px;
+  padding: 40px 32px;
+  text-align: left;
+  transition: border-color 0.2s;
+}
+
+.step:hover {
+  border-color: var(--grey-300);
 }
 
 .step__number {
   width: 48px;
   height: 48px;
-  background: var(--black);
-  color: var(--white);
-  border-radius: 50%;
+  background: var(--grey-100);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 24px;
+  color: var(--black);
   font-size: 18px;
   font-weight: 700;
-  margin: 0 auto 20px;
 }
 
 .step__title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 12px;
 }
@@ -471,54 +483,6 @@ body {
   font-size: 14px;
   color: var(--grey-700);
   line-height: 1.6;
-}
-
-/* Variante GHOST (Si sos curador): números grandes tipo editorial, sin círculo */
-.steps--ghost .step {
-  padding-top: 8px;
-  border-top: 2px solid var(--black);
-}
-
-.steps--ghost .step__number {
-  width: auto;
-  height: auto;
-  background: none;
-  color: var(--grey-300);
-  border-radius: 0;
-  font-size: 52px;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin: 0 0 16px;
-  justify-content: flex-start;
-}
-
-.steps--ghost .step {
-  text-align: left;
-}
-
-/* Variante CARDS (Si sos galería): tarjetas con badge, alineado a la izquierda */
-.steps--cards {
-  gap: 24px;
-}
-
-.steps--cards .step {
-  text-align: left;
-  border: 1px solid var(--grey-200);
-  border-radius: 12px;
-  padding: 32px 28px;
-  transition: border-color 0.2s;
-}
-
-.steps--cards .step:hover {
-  border-color: var(--grey-300);
-}
-
-.steps--cards .step__number {
-  width: 36px;
-  height: 36px;
-  font-size: 15px;
-  margin: 0 0 20px;
 }
 
 /* ---- Ecosistema (visual) ---- */
