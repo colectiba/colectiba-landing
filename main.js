@@ -119,4 +119,53 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  // Actualizar estadísticas reales desde el backend
+  var apiBase = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:3000'
+    : 'https://app.colectiba.com';
+
+  function animateValue(obj, start, end, duration, prefix) {
+    prefix = prefix || '';
+    if (start === end) {
+      obj.textContent = prefix + end;
+      return;
+    }
+    var range = end - start;
+    if (range <= 0) {
+      obj.textContent = prefix + end;
+      return;
+    }
+    var current = start;
+    var stepTime = 20; // 50 fps
+    var stepsCount = duration / stepTime;
+    var stepValue = range / stepsCount;
+
+    var timer = setInterval(function () {
+      current += stepValue;
+      if (current >= end) {
+        obj.textContent = prefix + end;
+        clearInterval(timer);
+      } else {
+        obj.textContent = prefix + Math.floor(current);
+      }
+    }, stepTime);
+  }
+
+  fetch(apiBase + '/api/landing-stats')
+    .then(function (res) { return res.json(); })
+    .then(function (res) {
+      if (res && res.ok && res.data) {
+        var elArtists = document.getElementById('stat-artists');
+        var elCurators = document.getElementById('stat-curators-galleries');
+        var elArtworks = document.getElementById('stat-artworks');
+
+        if (elArtists) animateValue(elArtists, 0, res.data.artists, 1000, '+');
+        if (elCurators) animateValue(elCurators, 0, res.data.curatorsAndGalleries, 1000, '+');
+        if (elArtworks) animateValue(elArtworks, 0, res.data.artworks, 1000, '+');
+      }
+    })
+    .catch(function (err) {
+      console.warn('Error fetching landing stats:', err);
+    });
 });
